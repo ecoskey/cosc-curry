@@ -1,0 +1,38 @@
+{
+  "name": "cosc-curry",
+  "version": "1.0.0",
+  "description": "A utility function to create curried functions and an accompanying decorator :)",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/**/*",
+    "types/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "lint": "eslint \"**/*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmersonCoskey/cosc-curry.git"
+  },
+  "keywords": [
+    "curry",
+    "currying",
+    "functional-programming",
+    "utility"
+  ],
+  "author": "cosc",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/EmersonCoskey/cosc-curry/issues"
+  },
+  "homepage": "https://github.com/EmersonCoskey/cosc-curry#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.27.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.2.4"
+  }
+}
