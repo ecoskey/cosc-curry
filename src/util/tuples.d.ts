@@ -8,6 +8,4 @@ export type Subset<T extends [..._]> = T extends [...infer TSubset, _] ? Subset<
 
 export type Superset<T extends [..._]> = [...T, ..._];
 
-export type Difference<T extends [..._], U extends Subset<T>> = T extends [...U, ...infer D] ?  D : T;
-
-type thing = Difference<[1, 2, 3, 4], []>
+export type Difference<T extends [..._], U extends Subset<T>> = U extends T ? [] : (U[0] extends T[0] ? Difference<Tail<T>, Tail<U>> : T);

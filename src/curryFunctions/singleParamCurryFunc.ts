@@ -10,12 +10,5 @@ export default function singleCurry<TFunc extends BetterFunction>(fn: TFunc): Si
     return curriedFn as SingleCurry<TFunc>; // hate this
 }
 
-const thing = singleCurry((a: 1, b: 2, c: 3, d: 4): true => {
-    console.log(a, b, c, d);
-    return true;
-});
-
-thing(1)(2)(3)(4);
-
 
 
