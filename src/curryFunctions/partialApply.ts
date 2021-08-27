@@ -1,7 +1,8 @@
-import { BetterFunction } from '../util/functions';
+import { UnknownFunction } from '../util/functions';
 import { Difference, Subset } from '../util/tuples';
 
-export default function applyFn<F extends BetterFunction, A extends Subset<Parameters<F>>>(fn: F, ...args: A): (...newArgs: Difference<Parameters<F>, A>) => ReturnType<F> {
+export type PartialApply<F extends UnknownFunction, A extends Subset<Parameters<F>>> = F extends (...args: infer P) => infer R ? (...newArgs: Difference<P, A>) => R : never;
+
+export default function applyFn<F extends UnknownFunction, A extends Subset<Parameters<F>>>(fn: F, ...args: A): PartialApply<F, A> {
     return (...newArgs: Difference<Parameters<F>, A>) => fn(...[...args, ...newArgs]);
 }
-
